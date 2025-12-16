@@ -1,0 +1,11 @@
+services:
+  frontend:
+    image: bugalteria
+    build: .
+    container_name: bugalteria
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/bugalteria
+      - /bugalteria/node_modules
+    command: npm run dev -- --host

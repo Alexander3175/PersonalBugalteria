@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+  font-family: 'KharkivTone'; /* любое название для использования в CSS */
+  src: url('../public/fonts/KharkivTone-regular.ttf') format('truetype');
+  font-weight: normal; /* можно указать bold, если это жирный шрифт */
+  font-style: normal; /* normal, italic и т.д. */
+}
+
+* {
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+  color: #757575;
+}
+
+.font {
+  font-family: KharkivTone, sans-serif;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img,
+a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.wrapper_page {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Start Media */
+
+@media only screen and (max-width: 990px) {
+  .wrapper_page {
+    width: 95%;
+  }
+}

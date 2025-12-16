@@ -1,0 +1,28 @@
+.footer {
+  padding: 30px 5rem;
+  width: 100%;
+  background-color: var(--theme-white);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.copyright {
+  align-self: end;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.imageBox {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+}

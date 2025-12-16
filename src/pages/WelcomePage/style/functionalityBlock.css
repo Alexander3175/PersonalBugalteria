@@ -1,0 +1,30 @@
+.container-functionalityBlock {
+  width: 100%;
+  height: auto;
+  padding: 5rem;
+}
+
+.content-functionalityBlock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5rem;
+}
+
+.functionality-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.functionality-item__title {
+  text-align: center;
+}
+
+.imageBox {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+}

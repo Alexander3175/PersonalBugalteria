@@ -1,0 +1,51 @@
+.container-interfacePreview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  width: 100%;
+  background-color: #d4edea;
+}
+
+.interfacePreview-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.bth-starting {
+  width: fit-content;
+  padding: 1rem 4rem;
+  border-radius: var(--radius-6);
+  background: linear-gradient(90deg, #9ddad4, #00bda9);
+  cursor: pointer;
+  transition: box-shadow 500ms 50ms;
+}
+
+.bth-starting:hover {
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.bth-starting:active {
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.imageBox__screen {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+}
+
+.imageBox__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-6);
+}
