@@ -1,4 +1,4 @@
-import "@core/styles/layouts/header.css";
+import "../style/header.css";
 import { Link } from "react-router";
 const Header = () => {
   return (
@@ -21,7 +21,9 @@ const Header = () => {
               <img src="/icons/sun-svgrepo-com 1.svg" alt="theme" />
             </button>
             <button className="profile no-select">
-              <img src="/icons/profile-svgrepo-com 1.svg" alt="theme" />
+              <Link to="/auth">
+                <img src="/icons/profile-svgrepo-com 1.svg" alt="theme" />
+              </Link>
             </button>
           </div>
         </div>

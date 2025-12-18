@@ -1,4 +1,4 @@
-import "@core/styles/layouts/aside.css";
+import "../style/aside.css";
 
 const Aside = () => {
   return (

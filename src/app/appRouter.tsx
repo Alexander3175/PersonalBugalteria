@@ -3,21 +3,28 @@ import {
   RouterProvider,
   type RouteObject,
 } from "react-router";
-import LoginPage from "@pages/LoginPage";
 import ErrorPage from "@pages/ErrorPage";
 
+import App from "./App";
 import WelcomePage from "@/pages/WelcomePage";
+import AuthLayout from "./layouts/authLayout";
+import AuthPage from "@/pages/auth";
 
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: <WelcomePage />,
+    element: <App />,
     children: [
       {
-        path: "auth",
-        element: <LoginPage />,
+        path: "",
+        element: <WelcomePage />,
       },
     ],
+  },
+  {
+    path: "/auth",
+    element: <AuthLayout />,
+    children: [{ path: "", element: <AuthPage /> }],
   },
   {
     path: "*",

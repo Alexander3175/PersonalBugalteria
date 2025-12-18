@@ -59,6 +59,10 @@ a {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 /* Указываем понятную периодичность в потоке данных у article*/
 article > * + * {
   margin-top: 1em;
