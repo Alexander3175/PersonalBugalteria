@@ -1,6 +1,17 @@
+import { useUser } from "@/store/store";
 import "../style/header.css";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useAuth } from "@/modules/auth/hooks/isAuth";
 const Header = () => {
+  const navigate = useNavigate();
+  const logout = useUser((state) => state.logout);
+  const isAuth = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/", { replace: true });
+  };
+
   return (
     <header className="header">
       <div className="header-conteiner">
@@ -25,6 +36,11 @@ const Header = () => {
                 <img src="/icons/profile-svgrepo-com 1.svg" alt="theme" />
               </Link>
             </button>
+            {isAuth && (
+              <button className="profile no-select" onClick={handleLogout}>
+                Logout
+              </button>
+            )}
           </div>
         </div>
       </div>

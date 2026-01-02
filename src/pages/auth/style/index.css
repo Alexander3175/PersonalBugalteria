@@ -1,3 +1,24 @@
+.auth-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #9ddad4;
+}
+
+.auth-card {
+  background-color: var(--theme-white);
+  border-radius: var(--radius-6);
+  -webkit-box-shadow:
+    2px 5px 16px 0px #0b325e,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow:
+    2px 5px 16px 0px #0b325e,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
 .wrapper-auth_login {
   display: flex;
   flex-direction: row-reverse;

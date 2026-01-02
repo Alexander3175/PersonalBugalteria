@@ -7,5 +7,5 @@ services:
       - "5173:5173"
     volumes:
       - .:/bugalteria
-      - /bugalteria/node_modules
+      - node_modules_front:/bugalteria/node_modules
     command: npm run dev -- --host

@@ -5,27 +5,26 @@ import {
 } from "react-router";
 import ErrorPage from "@pages/ErrorPage";
 
-import App from "./App";
 import WelcomePage from "@/pages/WelcomePage";
-import AuthLayout from "./layouts/authLayout";
 import AuthPage from "@/pages/auth";
+import PublickLayout from "./layouts/publickLayout";
+import ProtectedLayout from "./layouts/protectedLayout";
 
 const routes: RouteObject[] = [
   {
-    path: "/",
-    element: <App />,
+    element: <PublickLayout />,
     children: [
-      {
-        path: "",
-        element: <WelcomePage />,
-      },
+      { path: "/", element: <WelcomePage /> },
+      { path: "/auth", element: <AuthPage /> },
     ],
   },
+
   {
-    path: "/auth",
-    element: <AuthLayout />,
-    children: [{ path: "", element: <AuthPage /> }],
+    path: "/app",
+    element: <ProtectedLayout />,
+    children: [{ index: true, element: <ErrorPage /> }],
   },
+
   {
     path: "*",
     element: <ErrorPage />,

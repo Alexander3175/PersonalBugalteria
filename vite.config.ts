@@ -9,7 +9,7 @@ export default defineConfig({
     port: 5173,
     host: true,
     proxy: {
-      "/api": "http://localhost:8080", //Тепер у фронті можна робити fetch просто так: fetch("/api/users")
+      "/api": "http://localhost:8080",
     },
   },
   resolve: {
