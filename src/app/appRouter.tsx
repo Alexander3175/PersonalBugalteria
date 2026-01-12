@@ -9,6 +9,7 @@ import WelcomePage from "@/pages/WelcomePage";
 import AuthPage from "@/pages/auth";
 import PublickLayout from "./layouts/publickLayout";
 import ProtectedLayout from "./layouts/protectedLayout";
+import TestPage from "@/pages/test";
 
 const routes: RouteObject[] = [
   {
@@ -28,6 +29,11 @@ const routes: RouteObject[] = [
   {
     path: "*",
     element: <ErrorPage />,
+  },
+
+  {
+    path: "/test",
+    element: <TestPage />,
   },
 ];
 

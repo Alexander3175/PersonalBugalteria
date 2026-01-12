@@ -1,0 +1,16 @@
+.wrapper-test {
+  display: flex;
+  height: 100vh;
+}
+
+.wrapper__header-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.aside-wrapper {
+  background-color: red;
+  width: 200px;
+  height: 100vh;
+}

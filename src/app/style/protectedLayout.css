@@ -1,0 +1,9 @@
+.protected-layout-wrapper {
+  width: 100%;
+}
+
+.protected-layout-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
