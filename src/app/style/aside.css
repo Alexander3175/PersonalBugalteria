@@ -1,7 +1,60 @@
+.aside * {
+  color: white;
+}
+
 .aside {
-  padding: 20px 17px;
   width: 15%;
   color: white;
   background-color: #4880ff;
   height: 100vh;
+}
+
+.aside h4 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.userInformation {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 20px 17px;
+  border-bottom: 2px solid #3a74fcda;
+}
+
+.userInformation > .imageBox {
+  width: 3rem;
+}
+
+.userFunctionality {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.userSettings-items {
+  border-top: 2px solid #3a74fcda;
+  margin: 1rem 0;
+}
+
+.userFunctionality_item > .imageBox,
+.userSettings_item > .imageBox {
+  width: 2.5rem;
+}
+
+.userFunctionality_item,
+.userSettings_item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  transition: 150ms background-color linear;
+}
+
+.userFunctionality_item:hover,
+.userSettings_item:hover {
+  background-color: #3b76ff;
+}
+
+.userFunctionality_item__dashboards--active {
+  background-color: #306eff;
 }

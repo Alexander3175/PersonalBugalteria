@@ -25,20 +25,32 @@ const Header = () => {
             <input type="text" placeholder="Пошук..." />
           </div>
           <div className="header_actions">
-            <button className="notification no-select">
-              <img src="/icons/Shape.svg" alt="notification" />
-            </button>
-            <button className="theme no-select">
-              <img src="/icons/sun-svgrepo-com 1.svg" alt="theme" />
-            </button>
+            {!isAuth && (
+              <button className="notification no-select">
+                <div className="imageBox">
+                  <img src="/icons/Shape.svg" alt="notification" />
+                </div>
+              </button>
+            )}
+            {!isAuth && (
+              <button className="theme no-select">
+                <div className="imageBox">
+                  <img src="/icons/sun-svgrepo-com 1.svg" alt="theme" />
+                </div>
+              </button>
+            )}
             <button className="profile no-select">
               <Link to="/auth">
-                <img src="/icons/profile-svgrepo-com 1.svg" alt="theme" />
+                <div className="imageBox">
+                  <img src="/icons/profile-svgrepo-com 1.svg" alt="profile" />
+                </div>
               </Link>
             </button>
             {isAuth && (
-              <button className="profile no-select" onClick={handleLogout}>
-                Logout
+              <button className="exit no-select" onClick={handleLogout}>
+                <div className="imageBox">
+                  <img src="/icons/aside/exit_svg.svg" alt="exit" />
+                </div>
               </button>
             )}
           </div>
