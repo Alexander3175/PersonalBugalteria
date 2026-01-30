@@ -1,9 +1,17 @@
 import api from "@/core/api/api";
-import type { LoginResponse, UserRequest } from "../types/api.type";
+import type {
+  LoginResponse,
+  RegResponse,
+  UserLoginRequest,
+  UserRegRequest,
+} from "../types/api.type";
 
-const Login = async (data: UserRequest) => {
+export const Login = async (data: UserLoginRequest) => {
   const response = await api.post<LoginResponse>("/auth/login", data);
   return response.data.data;
 };
 
-export default Login;
+export const Regestration = async (data: UserRegRequest) => {
+  const response = await api.post<RegResponse>("/auth/registration", data);
+  return response.data.data;
+};

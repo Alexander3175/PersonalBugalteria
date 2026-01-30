@@ -15,11 +15,13 @@ const App = () => {
   if (error) return <div>Помилка: {(error as Error).message}</div>;
 
   return (
-    <div className="wrapper">
-      <div className="main-conteiner">
-        <Outlet />
+    <>
+      <div className="wrapper">
+        <div className="main-conteiner">
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

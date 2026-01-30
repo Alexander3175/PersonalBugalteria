@@ -1,0 +1,63 @@
+.wrapper-stats {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 15px;
+  border: 1px solid #aeaeae;
+  border-radius: 1rem;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-header h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #202224;
+}
+
+.statsImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 40%;
+}
+
+.statsImage > img {
+  width: 20px;
+}
+
+.number {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: black;
+}
+
+.stats-footer p {
+  color: #606060;
+}
+
+.stats-footer > p .prozent {
+  display: inline-block;
+  margin: 0 5px;
+  color: #00b69b;
+}
+
+.incomeImage {
+  background-color: #8280ff5b;
+}
+
+.transactionsImage {
+  background-color: #ffc538;
+}

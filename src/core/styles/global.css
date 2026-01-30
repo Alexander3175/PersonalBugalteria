@@ -107,3 +107,18 @@ button {
   text-decoration: none;
   color: inherit;
 }
+
+.imageBox {
+  width: 100%;
+  max-width: 50px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.recharts-wrapper svg:focus {
+  outline: none;
+}
+
+svg *:focus {
+  outline: none;
+}

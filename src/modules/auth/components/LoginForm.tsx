@@ -1,16 +1,23 @@
 import { useMutation } from "@tanstack/react-query";
-import type { LoginData, UserRequest } from "../types/api.type";
-import Login from "../api/auth";
+import type { LoginData, UserLoginRequest } from "../types/api.type";
+import { Login } from "../api/auth";
 import { useUser } from "@/store/store";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 const LoginForm = () => {
   const setUser = useUser((state) => state.setUser);
-
+  const navigate = useNavigate();
   const { mutate } = useMutation({
-    mutationFn: (data: UserRequest) => Login(data),
+    mutationFn: (data: UserLoginRequest) => Login(data),
     onSuccess: (res: LoginData) => {
+      toast.success("GOD");
       localStorage.setItem("accessToken", res.accessToken);
       setUser(res.user);
+      navigate("/app");
+    },
+    onError: (error: Error) => {
+      toast.error(error.message || "Невідома помилка");
     },
   });
 
@@ -24,9 +31,6 @@ const LoginForm = () => {
       password: String(formData.get("password")),
     });
   };
-
-  console.log(useUser.getState().user);
-  console.log(useUser.getState().isAuth);
   return (
     <div className="login-conteiner">
       <div className="login-content">

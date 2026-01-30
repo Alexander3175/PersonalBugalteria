@@ -1,0 +1,24 @@
+.wrapper-headerDashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.headerDashboard-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.headerDashboard-buttons button {
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: var(--radius-6);
+  color: black;
+}
+
+.headerDashboard-buttons button:first-child {
+  color: white;
+  background-color: #4880ff;
+  border: 0;
+}

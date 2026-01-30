@@ -1,0 +1,6 @@
+.wrapper-Dashboard {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 5rem;
+  width: 100%;
+}

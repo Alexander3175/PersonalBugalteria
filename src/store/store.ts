@@ -24,6 +24,6 @@ export const useUser = create<State & Actions>()(
     {
       name: "user-storage",
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 );
