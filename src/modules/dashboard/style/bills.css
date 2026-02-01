@@ -1,0 +1,46 @@
+.wrapper-bills {
+  width: 40%;
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e0e0;
+}
+
+.bills-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 2rem 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.bills-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.bills-header > h3 {
+  color: #202224;
+  font-size: 1rem;
+}
+
+.bills-header__icon {
+  border-radius: 12px;
+  background-color: #009933;
+  padding: 10px;
+}
+
+.bills-item__bill span,
+.bills-item__result span {
+  color: #202224;
+}
+
+.bills-item__income {
+  color: black;
+}
+
+.bills-item__result span:first-child {
+  color: #00b69b;
+  margin-right: 10px;
+}

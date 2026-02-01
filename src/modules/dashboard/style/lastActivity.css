@@ -1,0 +1,133 @@
+.wrapper-LastActivity {
+  width: 70%;
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e0e0;
+}
+
+.lastActivity-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.lastActivity-header__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lastActivity-header__title h3 {
+  color: #636466;
+  font-size: 1rem;
+}
+
+.lastActivity-header-title__description {
+  color: #0a0a0a;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.lastActivity-header__title button {
+  padding: 5px 10px;
+  color: white;
+  background-color: #4880ff;
+  border-radius: var(--radius-6);
+}
+
+.lastActivity-items {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  border: 1px solid #ececec;
+  border-radius: var(--radius-6);
+}
+
+.lastActivity-item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  padding: 12px 5px;
+  border: 1px solid #ecececa4;
+}
+
+.lastActivity-item__item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: start;
+  text-align: center;
+}
+
+.lastActivity-item__item span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: rgba(110, 104, 147, 1);
+}
+
+.lastActivity-item__title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.lastActivity-item__title span:first-child {
+  font-weight: 500;
+}
+
+.lastActivity-item__status {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.lastActivity-item-status__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background-color: #cdffcd;
+  border-radius: 12px;
+}
+
+.lastActivity-item-status__status p {
+  color: rgba(0, 127, 0, 1);
+  font-weight: 500;
+}
+
+.lastActivity-item-status-circle {
+  width: 5px;
+  height: 5px;
+  background-color: rgba(0, 127, 0, 1);
+  border-radius: 100%;
+}
+
+.lastActivity-item__price {
+  display: flex;
+  flex-direction: column;
+  gap: 5;
+}
+
+.lastActivity-item__price span:first-child {
+  font-weight: 500;
+}
+
+.lastActivity-item__viewMore {
+  color: rgba(110, 104, 147, 1);
+  font-weight: 500;
+}
+
+.lastActivity-item__moreCircle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.lastActivity-item-moreCircle__circle {
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: black;
+}
