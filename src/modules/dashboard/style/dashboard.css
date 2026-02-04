@@ -1,8 +1,8 @@
 .wrapper-stats {
   display: flex;
-  gap: 30px;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .stats-item {
@@ -12,6 +12,7 @@
   padding: 10px 15px;
   border: 1px solid #aeaeae;
   border-radius: 1rem;
+  background-color: white;
 }
 
 .stats-header {

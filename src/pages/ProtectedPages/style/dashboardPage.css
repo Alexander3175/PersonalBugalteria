@@ -8,19 +8,17 @@
 
 .wrapper-graphics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 1fr);
-  gap: 2rem;
+  grid-column-gap: 9px;
+  grid-row-gap: 9px;
   margin-top: 1rem;
 }
 
-@media (max-width: 1024px) {
-  .wrapper-Dashboard {
-    padding: 1rem 2rem;
-  }
+.chart-card {
+  grid-area: 1 / 1 / 2 / 2;
 }
-
-@media (max-width: 768px) {
-  .wrapper-Dashboard {
-    padding: 1rem;
-  }
+.wrapper-bills {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.wrapper-LastActivity {
+  grid-area: 2 / 1 / 3 / 3;
 }

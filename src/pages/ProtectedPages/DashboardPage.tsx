@@ -1,11 +1,4 @@
-import {
-  Pie,
-  PieChart,
-  ResponsiveContainer,
-  Tooltip,
-  Legend,
-  Cell,
-} from "recharts";
+import { Pie, PieChart, ResponsiveContainer, Tooltip, Cell } from "recharts";
 import {
   BillsBlock,
   createPieGradient,
@@ -16,10 +9,6 @@ import {
 import "./style/dashboardPage.css";
 
 const data = [
-  { name: "Доходи", value: 45, icon: "💰" },
-  { name: "Витрати", value: 30, icon: "💸" },
-  { name: "Заощадження", value: 15, icon: "🏦" },
-  { name: "Інше", value: 10, icon: "📊" },
   { name: "Доходи", value: 45, icon: "💰" },
   { name: "Витрати", value: 30, icon: "💸" },
   { name: "Заощадження", value: 15, icon: "🏦" },
@@ -88,16 +77,19 @@ const DashboardPage = () => {
                 shape={createPieGradient(COLORS, 3)}
               >
                 {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={COLORS[index % COLORS.length]}
+                  />
                 ))}
               </Pie>
               <Tooltip content={<CustomTooltip />} />
-              <Legend content={<CustomLegend />} />
+              {/* <Legend content={<CustomLegend />} /> */}
             </PieChart>
           </ResponsiveContainer>
         </div>
-        <LastActivityBlock />
         <BillsBlock />
+        <LastActivityBlock />
       </div>
     </div>
   );

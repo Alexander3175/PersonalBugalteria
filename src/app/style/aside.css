@@ -3,10 +3,9 @@
 }
 
 .aside {
-  width: 15%;
+  width: 250px;
   color: white;
-  background-color: #4880ff;
-  height: 100vh;
+  background-color: hsl(222, 100%, 64%);
 }
 
 .aside h4 {

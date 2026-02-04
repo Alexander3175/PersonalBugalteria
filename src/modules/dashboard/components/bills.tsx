@@ -8,7 +8,7 @@ export const BillsBlock = () => {
           <h3>Рахунки</h3>
           <div className="bills-header__icon">
             <div className="imageBox">
-              <img src="" alt="image" />
+              <img src="/icons/GeldBuch.svg" alt="image" />
             </div>
           </div>
         </div>
