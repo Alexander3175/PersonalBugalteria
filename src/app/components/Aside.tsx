@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "../style/aside.css";
 
 const Aside = () => {
@@ -16,13 +17,13 @@ const Aside = () => {
               <div className="imageBox no-select">
                 <img src="/icons/aside/dashboard_svg.svg" alt="dashboard" />
               </div>
-              <h4>Дашборд</h4>
+              <Link to="/app">Дашборд</Link>
             </div>
             <div className="userFunctionality_item userFunctionality_item__transactions">
               <div className="imageBox no-select">
                 <img src="/icons/aside/transaction_svg.svg" alt="transaction" />
               </div>
-              <h4>Операції</h4>
+              <Link to="/app/operation">Операції</Link>
             </div>
             <div className="userFunctionality_item userFunctionality_item__analytics">
               <div className="imageBox no-select">

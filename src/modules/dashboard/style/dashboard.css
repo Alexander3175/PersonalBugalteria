@@ -36,7 +36,7 @@
 }
 
 .statsImage > img {
-  width: 20px;
+  width: 30px;
 }
 
 .number {
@@ -61,4 +61,12 @@
 
 .transactionsImage {
   background-color: #ffc538;
+}
+
+.savingsImage {
+  background-color: #38ff6a;
+}
+
+.balanceImage {
+  background-color: #ff7038;
 }

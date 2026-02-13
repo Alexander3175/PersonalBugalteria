@@ -35,11 +35,11 @@ export const LastActivityBlock = () => {
             <button className="lastActivity-item__viewMore">
               Подивитись більше
             </button>
-            <div className="lastActivity-item__moreCircle">
+            {/* <div className="lastActivity-item__moreCircle">
               <div className="lastActivity-item-moreCircle__circle"></div>
               <div className="lastActivity-item-moreCircle__circle"></div>
               <div className="lastActivity-item-moreCircle__circle"></div>
-            </div>
+            </div> */}
           </div>
           <div className="lastActivity-item">
             <div className="lastActivity-item__item lastActivity-item__title">
@@ -62,11 +62,11 @@ export const LastActivityBlock = () => {
             <button className="lastActivity-item__viewMore">
               Подивитись більше
             </button>
-            <div className="lastActivity-item__moreCircle">
+            {/* <div className="lastActivity-item__moreCircle">
               <div className="lastActivity-item-moreCircle__circle"></div>
               <div className="lastActivity-item-moreCircle__circle"></div>
               <div className="lastActivity-item-moreCircle__circle"></div>
-            </div>
+            </div> */}
           </div>
           <div className="lastActivity-item">
             <div className="lastActivity-item__item lastActivity-item__title">
@@ -89,11 +89,11 @@ export const LastActivityBlock = () => {
             <button className="lastActivity-item__viewMore">
               Подивитись більше
             </button>
-            <div className="lastActivity-item__moreCircle">
+            {/* <div className="lastActivity-item__moreCircle">
               <div className="lastActivity-item-moreCircle__circle"></div>
               <div className="lastActivity-item-moreCircle__circle"></div>
               <div className="lastActivity-item-moreCircle__circle"></div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

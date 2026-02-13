@@ -1,4 +1,5 @@
 .wrapper-headerDashboard {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,9 +16,11 @@
   border: 1px solid black;
   border-radius: var(--radius-6);
   color: black;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-.headerDashboard-buttons button:first-child {
+.headerDashboard-buttons .button-export {
   color: white;
   background-color: #4880ff;
   border: 0;

@@ -6,8 +6,8 @@ export const StatsBlock = () => {
       <div className="stats-item">
         <div className="stats-header">
           <h3>Дохід</h3>
-          <div className="statsImage incomeImage imageBox">
-            <img src="/icons/Shape.svg" alt="дохід" />
+          <div className="statsImage incomeImage imageBox no-select">
+            <img src="/icons/sales-amount-svgrepo-com.svg" alt="дохід" />
           </div>
         </div>
         <div className="number">
@@ -22,8 +22,8 @@ export const StatsBlock = () => {
       <div className="stats-item">
         <div className="stats-header">
           <h3>Транзакції</h3>
-          <div className="statsImage transactionsImage imageBox">
-            <img src="/icons/Shape.svg" alt="Транзакції" />
+          <div className="statsImage transactionsImage imageBox no-select">
+            <img src="/icons/transaction-svgrepo-com.svg" alt="Транзакції" />
           </div>
         </div>
         <div className="number">
@@ -37,13 +37,29 @@ export const StatsBlock = () => {
       </div>
       <div className="stats-item">
         <div className="stats-header">
-          <h3>Дохід</h3>
-          <div className="statsImage imageBox">
-            <img src="/icons/Shape.svg" alt="дохід" />
+          <h3>Заощадження</h3>
+          <div className="statsImage savingsImage imageBox no-select">
+            <img src="/icons/savings-hog-svgrepo-com.svg" alt="заощядження" />
           </div>
         </div>
         <div className="number">
           <span>40,000</span>
+        </div>
+        <div className="stats-footer">
+          <p>
+            <span className="prozent">+8.5%</span>від минулого місяця
+          </p>
+        </div>
+      </div>
+      <div className="stats-item">
+        <div className="stats-header">
+          <h3>Загальний Баланс</h3>
+          <div className="statsImage balanceImage imageBox no-select">
+            <img src="/icons/balance-1-svgrepo-com.svg" alt="дохід" />
+          </div>
+        </div>
+        <div className="number">
+          <span>401,000</span>
         </div>
         <div className="stats-footer">
           <p>

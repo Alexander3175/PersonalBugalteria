@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router";
 import { useAuth } from "@/modules/auth/hooks/isAuth";
 
-const PublickLayout = () => {
+const PublicLayout = () => {
   const isAuthUser = useAuth();
 
   if (isAuthUser) {
@@ -10,4 +10,4 @@ const PublickLayout = () => {
   return <Outlet />;
 };
 
-export default PublickLayout;
+export default PublicLayout;

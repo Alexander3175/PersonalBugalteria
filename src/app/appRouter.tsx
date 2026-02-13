@@ -7,14 +7,14 @@ import ErrorPage from "@pages/ErrorPage";
 
 import WelcomePage from "@/pages/WelcomePage";
 import AuthPage from "@/pages/auth";
-import PublickLayout from "./layouts/publickLayout";
+import PublicLayout from "./layouts/publicLayout";
 import ProtectedLayout from "./layouts/protectedLayout";
-import TestPage from "@/pages/test";
 import DashboardPage from "@/pages/ProtectedPages/DashboardPage";
+import OperationPage from "@/pages/ProtectedPages/OperationPage";
 
 const routes: RouteObject[] = [
   {
-    element: <PublickLayout />,
+    element: <PublicLayout />,
     children: [
       { path: "/", element: <WelcomePage /> },
       { path: "/auth", element: <AuthPage /> },
@@ -24,17 +24,15 @@ const routes: RouteObject[] = [
   {
     path: "/app",
     element: <ProtectedLayout />,
-    children: [{ index: true, element: <DashboardPage /> }],
+    children: [
+      { index: true, element: <DashboardPage /> },
+      { path: "operation", element: <OperationPage /> },
+    ],
   },
 
   {
     path: "*",
     element: <ErrorPage />,
-  },
-
-  {
-    path: "/test",
-    element: <TestPage />,
   },
 ];
 

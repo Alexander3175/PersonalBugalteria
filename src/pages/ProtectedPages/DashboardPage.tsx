@@ -7,6 +7,7 @@ import {
   StatsBlock,
 } from "@/modules/dashboard";
 import "./style/dashboardPage.css";
+import ExpensesChart from "@/modules/dashboard/components/Chart/MixBarChart";
 
 const data = [
   { name: "Доходи", value: 45, icon: "💰" },
@@ -17,7 +18,6 @@ const data = [
 
 const COLORS = ["#10b981", "#3b82f6", "#f59e0b", "#8b5cf6"];
 
-// Кастомна підказка
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0];
@@ -36,23 +36,23 @@ const CustomTooltip = ({ active, payload }: any) => {
 };
 
 // Кастомна легенда
-const CustomLegend = ({ payload }: any) => {
-  return (
-    <div className="custom-legend">
-      {payload.map((entry: any, index: number) => (
-        <div key={index} className="legend-item">
-          <div
-            className="legend-dot"
-            style={{ backgroundColor: entry.color }}
-          />
-          <span className="legend-text">
-            {entry.payload.icon} {entry.value}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-};
+// const CustomLegend = ({ payload }: any) => {
+//   return (
+//     <div className="custom-legend">
+//       {payload.map((entry: any, index: number) => (
+//         <div key={index} className="legend-item">
+//           <div
+//             className="legend-dot"
+//             style={{ backgroundColor: entry.color }}
+//           />
+//           <span className="legend-text">
+//             {entry.payload.icon} {entry.value}
+//           </span>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
 
 const DashboardPage = () => {
   return (
@@ -76,7 +76,7 @@ const DashboardPage = () => {
                 paddingAngle={3}
                 shape={createPieGradient(COLORS, 3)}
               >
-                {data.map((entry, index) => (
+                {data.map((_entry, index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
@@ -90,6 +90,9 @@ const DashboardPage = () => {
         </div>
         <BillsBlock />
         <LastActivityBlock />
+        <div className="chart-card">
+          <ExpensesChart />
+        </div>
       </div>
     </div>
   );

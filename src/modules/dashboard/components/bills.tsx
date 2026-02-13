@@ -7,7 +7,7 @@ export const BillsBlock = () => {
         <div className="bills-header">
           <h3>Рахунки</h3>
           <div className="bills-header__icon">
-            <div className="imageBox">
+            <div className="imageBox no-select">
               <img src="/icons/GeldBuch.svg" alt="image" />
             </div>
           </div>

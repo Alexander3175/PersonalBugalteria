@@ -4,6 +4,7 @@
 
 .aside {
   width: 250px;
+  height: 100vh;
   color: white;
   background-color: hsl(222, 100%, 64%);
 }
