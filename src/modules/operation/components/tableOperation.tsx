@@ -1,103 +1,13 @@
 import { useState } from "react";
 import "../style/tableOperationStyle.css";
+import type { Transaction } from "@/modules/dashboard/types/Transaction";
+import { mockTransactions } from "../const/dataTransactions";
+import { Pagination } from "@/shared/components/pagination/pagination";
 
 export const TableOperation = () => {
-  interface Transaction {
-    id: string;
-    date: string;
-    type: "income" | "expense";
-    category: string;
-    categoryIcon: string;
-    description: string;
-    amount: number;
-    card?: string;
-  }
-
-  const mockTransactions: Transaction[] = [
-    {
-      id: "1",
-      date: "2024-02-13",
-      type: "expense",
-      category: "Продукти",
-      categoryIcon: "🛒",
-      description: "Сільпо",
-      amount: 850.5,
-      card: "Monobank",
-    },
-    {
-      id: "2",
-      date: "2024-02-13",
-      type: "income",
-      category: "Зарплата",
-      categoryIcon: "💰",
-      description: "Місячна зарплата",
-      amount: 25000,
-      card: "ПриватБанк",
-    },
-    {
-      id: "3",
-      date: "2024-02-12",
-      type: "expense",
-      category: "Транспорт",
-      categoryIcon: "🚗",
-      description: "Bolt поїздка",
-      amount: 180,
-      card: "Monobank",
-    },
-    {
-      id: "4",
-      date: "2024-02-12",
-      type: "expense",
-      category: "Ресторани",
-      categoryIcon: "🍽️",
-      description: "Обід з колегами",
-      amount: 450,
-      card: "Cashback",
-    },
-    {
-      id: "5",
-      date: "2024-02-11",
-      type: "expense",
-      category: "Підписки",
-      categoryIcon: "📱",
-      description: "Netflix Premium",
-      amount: 350,
-      card: "Monobank",
-    },
-    {
-      id: "6",
-      date: "2024-02-11",
-      type: "income",
-      category: "Фріланс",
-      categoryIcon: "💻",
-      description: "Розробка сайту",
-      amount: 5000,
-      card: "ПриватБанк",
-    },
-    {
-      id: "7",
-      date: "2024-02-10",
-      type: "expense",
-      category: "Здоров'я",
-      categoryIcon: "💊",
-      description: "Аптека 9-1-1",
-      amount: 320,
-      card: "Monobank",
-    },
-    {
-      id: "8",
-      date: "2024-02-10",
-      type: "expense",
-      category: "Розваги",
-      categoryIcon: "🎬",
-      description: "Кінотеатр Multiplex",
-      amount: 400,
-      card: "Cashback",
-    },
-  ];
-
   type SortField = "date" | "amount";
   type SortOrder = "asc" | "desc";
+
   const [transactions, setTransactions] =
     useState<Transaction[]>(mockTransactions);
   const [sortField, setSortField] = useState<SortField>("date");
@@ -105,8 +15,9 @@ export const TableOperation = () => {
   const [filterType, setFilterType] = useState<"all" | "income" | "expense">(
     "all",
   );
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
-  // Сортування
   const handleSort = (field: SortField) => {
     if (sortField === field) {
       setSortOrder(sortOrder === "asc" ? "desc" : "asc");
@@ -114,22 +25,24 @@ export const TableOperation = () => {
       setSortField(field);
       setSortOrder("desc");
     }
+    setPage(1);
   };
 
-  // Видалення
-  const handleDelete = (id: string) => {
-    if (window.confirm("Ви впевнені, що хочете видалити цю операцію?")) {
-      setTransactions(transactions.filter((t) => t.id !== id));
-    }
+  const handleFilterChange = (type: "all" | "income" | "expense") => {
+    setFilterType(type);
+    setPage(1);
   };
 
-  // Редагування (заглушка)
-  const handleEdit = (id: string) => {
-    console.log("Edit transaction:", id);
-    // Тут буде логіка відкриття модального вікна редагування
-  };
+  // const handleDelete = (id: string) => {
+  //   if (window.confirm("Ви впевнені, що хочете видалити цю операцію?")) {
+  //     setTransactions(transactions.filter((t) => t.id !== id));
+  //   }
+  // };
 
-  // Фільтрація та сортування
+  // const handleEdit = (id: string) => {
+  //   console.log("Edit transaction:", id);
+  // };
+
   const filteredAndSorted = transactions
     .filter((t) => filterType === "all" || t.type === filterType)
     .sort((a, b) => {
@@ -142,7 +55,12 @@ export const TableOperation = () => {
       return sortOrder === "asc" ? comparison : -comparison;
     });
 
-  // Форматування дати
+  const totalItems = filteredAndSorted.length;
+  const paginatedItems = filteredAndSorted.slice(
+    (page - 1) * pageSize,
+    page * pageSize,
+  );
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     const today = new Date();
@@ -162,7 +80,6 @@ export const TableOperation = () => {
     }
   };
 
-  // Форматування суми
   const formatAmount = (amount: number, type: "income" | "expense") => {
     const formatted = amount.toLocaleString("uk-UA", {
       minimumFractionDigits: 2,
@@ -173,32 +90,30 @@ export const TableOperation = () => {
 
   return (
     <div className="transactions-container">
-      {/* Фільтри */}
       <div className="transactions-header">
         <h2 className="transactions-title">Операції</h2>
         <div className="filter-buttons">
           <button
             className={`filter-btn ${filterType === "all" ? "active" : ""}`}
-            onClick={() => setFilterType("all")}
+            onClick={() => handleFilterChange("all")}
           >
             Всі
           </button>
           <button
             className={`filter-btn income ${filterType === "income" ? "active" : ""}`}
-            onClick={() => setFilterType("income")}
+            onClick={() => handleFilterChange("income")}
           >
             <span className="filter-icon">↑</span> Доходи
           </button>
           <button
             className={`filter-btn expense ${filterType === "expense" ? "active" : ""}`}
-            onClick={() => setFilterType("expense")}
+            onClick={() => handleFilterChange("expense")}
           >
             <span className="filter-icon">↓</span> Витрати
           </button>
         </div>
       </div>
 
-      {/* Таблиця - Desktop */}
       <div className="table-wrapper">
         <table className="transactions-table">
           <thead>
@@ -221,11 +136,11 @@ export const TableOperation = () => {
                   {sortField === "amount" && (sortOrder === "asc" ? "↑" : "↓")}
                 </span>
               </th>
-              <th className="actions-header">Дії</th>
+              {/* <th className="actions-header">Дії</th> */}
             </tr>
           </thead>
           <tbody>
-            {filteredAndSorted.map((transaction) => (
+            {paginatedItems.map((transaction) => (
               <tr key={transaction.id}>
                 <td className="date-cell">{formatDate(transaction.date)}</td>
                 <td className="type-cell">
@@ -254,7 +169,7 @@ export const TableOperation = () => {
                 <td className={`amount-cell ${transaction.type}`}>
                   {formatAmount(transaction.amount, transaction.type)} ₴
                 </td>
-                <td className="actions-cell">
+                {/* <td className="actions-cell">
                   <button
                     className="action-btn edit"
                     onClick={() => handleEdit(transaction.id)}
@@ -269,16 +184,26 @@ export const TableOperation = () => {
                   >
                     🗑️
                   </button>
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>
         </table>
+
+        <Pagination
+          currentPage={page}
+          totalItems={totalItems}
+          pageSize={pageSize}
+          onPageChange={setPage}
+          onPageSizeChange={(size) => {
+            setPageSize(size);
+            setPage(1);
+          }}
+        />
       </div>
 
-      {/* Картки - Mobile */}
       <div className="transactions-cards">
-        {filteredAndSorted.map((transaction) => (
+        {paginatedItems.map((transaction) => (
           <div
             key={transaction.id}
             className={`transaction-card ${transaction.type}`}
@@ -311,7 +236,7 @@ export const TableOperation = () => {
               </div>
             </div>
 
-            <div className="card-actions">
+            {/* <div className="card-actions">
               <button
                 className="card-action-btn edit"
                 onClick={() => handleEdit(transaction.id)}
@@ -324,7 +249,7 @@ export const TableOperation = () => {
               >
                 🗑️ Видалити
               </button>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

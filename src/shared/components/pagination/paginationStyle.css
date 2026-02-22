@@ -1,0 +1,104 @@
+.pag-root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 0;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: #374151;
+}
+
+.pag-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pag-info {
+  color: #6b7280;
+}
+
+.pag-info strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.pag-size-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+}
+
+.pag-size-select {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 13px;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.pag-size-select:focus {
+  border-color: #2563eb;
+}
+
+.pag-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pag-btn {
+  min-width: 34px;
+  height: 34px;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  background: white;
+  color: #374151;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+  padding: 0 8px;
+}
+
+.pag-btn:hover:not(:disabled):not(.pag-active) {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.pag-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pag-active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.pag-arrow {
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.pag-ellipsis {
+  min-width: 34px;
+  text-align: center;
+  color: #9ca3af;
+  user-select: none;
+}

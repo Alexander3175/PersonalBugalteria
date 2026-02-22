@@ -67,7 +67,7 @@
 }
 
 .filter-icon {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 /* Таблиця - Desktop */
@@ -109,7 +109,7 @@
 .sort-icon {
   margin-left: 6px;
   color: #3b82f6;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 .amount-header,
@@ -201,7 +201,7 @@
 
 /* Amount */
 .amount-cell {
-  text-align: right;
+  text-align: left;
   font-weight: 600;
   font-size: 15px;
 }
